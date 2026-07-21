@@ -47,3 +47,11 @@ Vercel · **armory.muslewski.com**
 ## License
 
 MIT-family marketing site. Brand art © Mateusz Muslewski.
+
+## Community
+
+Product support lives on **[llm-armory](https://github.com/muslewski/llm-armory)**:
+
+- [Discussions](https://github.com/muslewski/llm-armory/discussions) — questions & ideas
+- [Issues](https://github.com/muslewski/llm-armory/issues) — bugs & features
+- Website-only fixes — open an issue here
