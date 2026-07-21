@@ -62,9 +62,10 @@
         <p class="lede">Named loadouts on the armory floor. Fable advisors arm <code>grok-high</code> executors on purpose — not by roulette. Motion bays are an extra layer on the warehouse — not a replacement for the rack.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://github.com/muslewski/llm-armory" target="_blank" rel="noopener">Open the armory →</a>
-          <button type="button" class="copy-block" data-cmd="ln -sfn ~/Repositories/llm-armory/bin/llm ~/.local/bin/armory" onclick="copyCmd(this)" tabindex="0" aria-label="Copy symlink command">
-            <span class="copy-label">$</span>
-            <span class="copy-cmd">ln -sfn …/bin/llm ~/.local/bin/armory</span>
+          <button type="button" class="copy-block" data-cmd="npm install -g llm-armory" onclick="copyCmd(this)" tabindex="0" aria-label="Copy npm install command">
+            <span class="copy-icon" aria-hidden="true">⎘</span>
+            <span class="c-prompt">$</span>
+            <span class="c-cmd">npm install -g llm-armory</span>
           </button>
         </div>
       </div>
@@ -136,49 +137,106 @@
   <section class="section quickstart reveal" id="quickstart">
     <div class="wrap">
       <p class="section-tag">// QUICKSTART</p>
-      <h2>Symlink. List. Arm. Fleet.</h2>
-      <ol class="steps">
-        <li>
-          <span class="step-n">1</span>
-          <div>
-            <h3>Symlink the armory</h3>
-            <button type="button" class="copy-block" data-cmd="mkdir -p ~/.local/bin && ln -sfn ~/Repositories/llm-armory/bin/llm ~/.local/bin/armory && export PATH=&quot;$HOME/.local/bin:$PATH&quot;" onclick="copyCmd(this)" tabindex="0">
-              <span class="copy-label">$</span>
-              <span class="copy-cmd">ln -sfn …/bin/llm ~/.local/bin/armory</span>
-            </button>
+      <h2>Install. List. Arm. Fleet.</h2>
+      <p class="demo-lede" style="margin-bottom:0">Click any line to copy. npm is the default path — same as SAGE.</p>
+    <div class="install-term reveal">
+      <div class="install-term-bar">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="term-title">setup</span>
+      </div>
+      <div class="install-tabs" role="tablist" aria-label="Install method">
+        <button class="install-tab" id="armory-tab-npm" role="tab" aria-selected="true" aria-controls="armory-panel-npm" tabindex="0" type="button">npm</button><button class="install-tab" id="armory-tab-npx" role="tab" aria-selected="false" aria-controls="armory-panel-npx" tabindex="-1" type="button">npx</button><button class="install-tab" id="armory-tab-git" role="tab" aria-selected="false" aria-controls="armory-panel-git" tabindex="-1" type="button">git</button>
+      </div>
+      <div class="install-term-body">
+        <div class="install-panel" id="armory-panel-npm" role="tabpanel" aria-labelledby="armory-tab-npm">
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="npm install -g llm-armory" role="button" tabindex="0" aria-label="Copy command: npm install -g llm-armory">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">npm install -g llm-armory</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#1</span> Install globally — bins: <code>armory</code> · <code>llm-armory</code> · <code>llm</code></div>
           </div>
-        </li>
-        <li>
-          <span class="step-n">2</span>
-          <div>
-            <h3>Inspect the rack</h3>
-            <button type="button" class="copy-block" data-cmd="armory --list" onclick="copyCmd(this)" tabindex="0">
-              <span class="copy-label">$</span>
-              <span class="copy-cmd">armory --list</span>
-            </button>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="armory --list" role="button" tabindex="0" aria-label="Copy command: armory --list">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">armory --list</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#2</span> Inspect the arsenal rack</div>
           </div>
-        </li>
-        <li>
-          <span class="step-n">3</span>
-          <div>
-            <h3>Arm an executor</h3>
-            <button type="button" class="copy-block" data-cmd="armory grok-high -p &quot;fix auth edge cases&quot; -w fix-auth" onclick="copyCmd(this)" tabindex="0">
-              <span class="copy-label">$</span>
-              <span class="copy-cmd">armory grok-high -p "…" -w name</span>
-            </button>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="armory doctor" role="button" tabindex="0" aria-label="Copy command: armory doctor">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">armory doctor</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#3</span> Check PATH, providers, loadouts</div>
           </div>
-        </li>
-        <li>
-          <span class="step-n">4</span>
-          <div>
-            <h3>Launch a fleet</h3>
-            <button type="button" class="copy-block" data-cmd="armory fleet grok-high --manifest fleet.txt --max-parallel 10" onclick="copyCmd(this)" tabindex="0">
-              <span class="copy-label">$</span>
-              <span class="copy-cmd">armory fleet grok-high --manifest fleet.txt</span>
-            </button>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="armory grok-high -p &quot;your brief&quot; -w my-exec" role="button" tabindex="0" aria-label="Copy command: armory grok-high -p your brief -w my-exec">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">armory grok-high -p "your brief" -w my-exec</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#4</span> Arm a Grok 4.5 executor in a worktree</div>
           </div>
-        </li>
-      </ol>
+        </div>
+        <div class="install-panel" id="armory-panel-npx" role="tabpanel" aria-labelledby="armory-tab-npx" hidden>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="npx llm-armory --list" role="button" tabindex="0" aria-label="Copy command: npx llm-armory --list">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">npx llm-armory --list</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#1</span> Run without a global install</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="npx llm-armory doctor" role="button" tabindex="0" aria-label="Copy command: npx llm-armory doctor">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">npx llm-armory doctor</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#2</span> Health checklist</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="npx llm-armory grok-high -p &quot;your brief&quot; -w my-exec" role="button" tabindex="0" aria-label="Copy command: npx llm-armory grok-high -p your brief -w my-exec">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">npx llm-armory grok-high -p "your brief" -w my-exec</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#3</span> Arm on demand</div>
+          </div>
+        </div>
+        <div class="install-panel" id="armory-panel-git" role="tabpanel" aria-labelledby="armory-tab-git" hidden>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="git clone https://github.com/muslewski/llm-armory.git" role="button" tabindex="0" aria-label="Copy command: git clone https://github.com/muslewski/llm-armory.git">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">git clone https://github.com/muslewski/llm-armory.git</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#1</span> Clone the product repo</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="cd llm-armory &amp;&amp; npm install &amp;&amp; npm link" role="button" tabindex="0" aria-label="Copy command: cd llm-armory &amp;&amp; npm install &amp;&amp; npm link">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">cd llm-armory &amp;&amp; npm install &amp;&amp; npm link</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#2</span> Link <code>armory</code> from source</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="armory --list" role="button" tabindex="0" aria-label="Copy command: armory --list">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">armory --list</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#3</span> Same rack, local checkout</div>
+          </div>
+        </div>
+        <div class="install-foot"><span class="ok">✓</span> Fleet: <code>armory fleet grok-high --manifest fleet.txt</code></div>
+      </div>
+    </div>
     </div>
   </section>
 
@@ -229,7 +287,10 @@
     <div class="wrap cta-inner">
       <h2>Stock the floor. Arm with intent.</h2>
       <p>Open source. Standalone-first. Steel floor first — motion bays as extra layer.</p>
-      <a class="btn btn-primary btn-lg" href="https://github.com/muslewski/llm-armory" target="_blank" rel="noopener">github.com/muslewski/llm-armory →</a>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:center">
+        <button type="button" class="copy-block" data-cmd="npm install -g llm-armory" onclick="copyCmd(this)" tabindex="0" aria-label="Copy: npm install -g llm-armory"><span class="copy-icon" aria-hidden="true">⎘</span><span class="c-prompt">$</span> <span class="c-cmd">npm install -g llm-armory</span></button>
+        <a class="btn btn-primary btn-lg" href="https://github.com/muslewski/llm-armory" target="_blank" rel="noopener">github.com/muslewski/llm-armory →</a>
+      </div>
     </div>
   </section>
 

@@ -813,3 +813,16 @@ body{
 .vid-frame video{
   min-height:0 !important;
 }
+
+:root {
+  --install-bg: #0a1218;
+  --install-bar: #0d1820;
+  --install-border: #2a3a48;
+  --install-text: #d8e6f0;
+  --install-muted: #6a8090;
+  --install-accent: #4a9fd4;
+  --install-cmd: #e8f2fa;
+  --install-prompt: #4a9fd4;
+  --install-hover: rgba(74, 159, 212, 0.12);
+  --install-radius: 2px;
+}

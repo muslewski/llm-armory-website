@@ -1,25 +1,5 @@
-/** Vanilla page behaviors — videos owned by r7-media.js */
-export function bootPage() {
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const revEls = document.querySelectorAll(".reveal");
-  if (!reduced) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("visible");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: "0px 0px -32px 0px" },
-    );
-    revEls.forEach((el) => io.observe(el));
-  } else {
-    revEls.forEach((el) => el.classList.add("visible"));
-  }
-
+/** SAGE-style click-to-copy + install method tabs. Safe to import once. */
+export function bootInstallUi() {
   let toastEl = null;
   function showToast(el) {
     if (!toastEl) {
@@ -46,9 +26,7 @@ export function bootPage() {
       const ta = document.createElement("textarea");
       ta.value = text;
       ta.setAttribute("readonly", "");
-      ta.style.position = "fixed";
-      ta.style.top = "0";
-      ta.style.opacity = "0";
+      ta.style.cssText = "position:fixed;top:0;opacity:0";
       document.body.appendChild(ta);
       ta.select();
       try {
@@ -92,29 +70,51 @@ export function bootPage() {
     }
   });
 
-  // Install method tabs
-  document.querySelectorAll(".install-tabs[role='tablist']").forEach((list) => {
-    const tabs = Array.from(list.querySelectorAll(".install-tab"));
-    if (!tabs.length) return;
-    const select = (tab) => {
-      tabs.forEach((t) => {
-        const on = t === tab;
-        t.setAttribute("aria-selected", String(on));
-        t.tabIndex = on ? 0 : -1;
-        const panel = document.getElementById(t.getAttribute("aria-controls"));
-        if (panel) panel.hidden = !on;
-      });
-    };
-    tabs.forEach((tab, i) => {
-      tab.addEventListener("click", () => select(tab));
-      tab.addEventListener("keydown", (e) => {
-        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-        e.preventDefault();
-        const dir = e.key === "ArrowRight" ? 1 : -1;
-        const next = tabs[(i + dir + tabs.length) % tabs.length];
-        select(next);
-        next.focus();
-      });
+  // Legacy data-copy="#selector" buttons
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const sel = btn.getAttribute("data-copy");
+      const el = document.querySelector(sel);
+      const text = el?.textContent?.trim() || "";
+      try {
+        await copyText(text);
+      } catch {
+        return;
+      }
+      const prev = btn.textContent;
+      btn.textContent = "copied";
+      setTimeout(() => (btn.textContent = prev), 1100);
     });
   });
+
+  function initInstallTabs() {
+    const roots = document.querySelectorAll(".install-term, .install-tabs");
+    // Group by nearest .install-term (or document for bare tablists)
+    const tablists = document.querySelectorAll(".install-tabs[role='tablist']");
+    tablists.forEach((list) => {
+      const tabs = Array.from(list.querySelectorAll(".install-tab"));
+      if (!tabs.length) return;
+      const select = (tab) => {
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.setAttribute("aria-selected", String(on));
+          t.tabIndex = on ? 0 : -1;
+          const panel = document.getElementById(t.getAttribute("aria-controls"));
+          if (panel) panel.hidden = !on;
+        });
+      };
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => select(tab));
+        tab.addEventListener("keydown", (e) => {
+          if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+          e.preventDefault();
+          const dir = e.key === "ArrowRight" ? 1 : -1;
+          const next = tabs[(i + dir + tabs.length) % tabs.length];
+          select(next);
+          next.focus();
+        });
+      });
+    });
+  }
+  initInstallTabs();
 }

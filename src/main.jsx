@@ -1,3 +1,4 @@
+import "./install-ui.css";
 import "./r7-media.js";
 import { bootPage } from "./effects.js";
 
