@@ -1,29 +1,49 @@
-# llm-armory website
+<p align="center">
+  <picture>
+    <source srcset="public/armory-banner.avif" type="image/avif">
+    <img src="public/armory-banner.webp" alt="llm-armory — choose the right executor for the job" width="1000" />
+  </picture>
+</p>
 
-Public marketing one-pager for **[llm-armory](https://github.com/muslewski/llm-armory)**.
+<p align="center">
+  <a href="https://armory.muslewski.com"><img src="https://img.shields.io/badge/website-armory.muslewski.com-4a9fd4?style=for-the-badge&labelColor=0b1018" alt="Website"></a>
+  <a href="https://github.com/muslewski/llm-armory"><img src="https://img.shields.io/badge/product-llm--armory-0b1018?style=for-the-badge" alt="Product"></a>
+</p>
 
-- **Live:** https://armory.muslewski.com
-- **Stack:** Vite static site (Round 7 — responsive + fast media)
-- **Product repo:** https://github.com/muslewski/llm-armory
+<p align="center">
+  <img src="public/demo-rack.gif" width="720" alt="armory --list arsenal rack" />
+</p>
+
+# llm-armory — marketing website
+
+Public one-pager for **[llm-armory](https://github.com/muslewski/llm-armory)** — named executor loadouts for agent fleets.
+
+**Live → [armory.muslewski.com](https://armory.muslewski.com)**
+
+> **Looking for the tool?** Loadouts, fleet, doctor:  
+> **https://github.com/muslewski/llm-armory**
+
+## Brand
+
+Steel armory floor · cyan weld · bolt grid · **grok-high** bay · React Bits crosshair (desktop).
+
+| Asset | Role |
+|-------|------|
+| `public/armory-banner.webp` | Brand banner |
+| `public/demo-rack.gif` / `demo-mission.gif` | Product demos |
+| `public/video/v*.mp4` | Live bay plates |
 
 ## Develop
 
 ```bash
-npm install
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-npm run preview
+npm install && npm run dev
+npm run build   # Vite + React island for Crosshair
 ```
 
 ## Deploy
 
-Vercel project linked to this repo. Production domain: `armory.muslewski.com`.
+Vercel · **armory.muslewski.com**
 
 ## License
 
-MIT (same family as the product tool). Site content and brand art © Mateusz Muslewski / muslewski.
+MIT-family marketing site. Brand art © Mateusz Muslewski.
