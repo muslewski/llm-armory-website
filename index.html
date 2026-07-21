@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="color-scheme" content="dark light" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>llm-armory — R7 · rack demo + companion bay · choose the right executor</title>
+  <meta name="description" content="Warehouse-grade loadout rack. Named executors. Video as additional layer on the steel floor.">
+  <meta name="theme-color" content="#0b1018">
+  <style>html,body{background:#0b1018;color:#b8c4d4;}</style>
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="/src/r7-responsive.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bolt-grid" aria-hidden="true"></div>
+  <div class="weld-glow" aria-hidden="true"></div>
+  <div class="plate-frame" aria-hidden="true">
+    <span class="bolt tl"></span><span class="bolt tr"></span>
+    <span class="bolt bl"></span><span class="bolt br"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#">
+        <span class="logo-plate">⬡</span>
+        <span class="logo-text">LLM-ARMORY</span>
+        <span class="logo-sub">FLOOR · R7</span>
+      </a>
+      <nav class="nav">
+        <a href="#problem">Fault</a>
+        <a href="#pillars">Loadouts</a>
+        <a href="#quickstart">Arm</a>
+        <a href="#demo">Rack</a>
+        <a class="nav-cta" href="https://github.com/muslewski/llm-armory" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      
+      <div class="hero-banner reveal" aria-label="llm-armory brand banner">
+        <div class="banner-plate">
+          <span class="rivet tl"></span><span class="rivet tr"></span>
+          <span class="rivet bl"></span><span class="rivet br"></span>
+          <picture>
+            <source srcset="/armory-banner.avif" type="image/avif">
+            <source srcset="/armory-banner.webp" type="image/webp">
+            <img src="/armory-banner.webp" width="1600" height="auto" alt="llm-armory — choose the right executor for the job">
+          </picture>
+        </div>
+      </div>
+    </div>
+    <div class="wrap hero-grid">
+      
+      <div class="hero-copy">
+        <p class="eyebrow">R7 · STEEL FLOOR · CROSSHAIR · RACK COMPANION</p>
+        <h1>Choose the right<br><span class="accent">executor</span> for the job.</h1>
+        <p class="lede">Named loadouts on the armory floor. Fable advisors arm <code>grok-high</code> executors on purpose — not by roulette. Motion bays are an extra layer on the warehouse — not a replacement for the rack.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/muslewski/llm-armory" target="_blank" rel="noopener">Open the armory →</a>
+          <button type="button" class="copy-block" data-cmd="ln -sfn ~/Repositories/llm-armory/bin/llm ~/.local/bin/armory" onclick="copyCmd(this)" tabindex="0" aria-label="Copy symlink command">
+            <span class="copy-label">$</span>
+            <span class="copy-cmd">ln -sfn …/bin/llm ~/.local/bin/armory</span>
+          </button>
+        </div>
+      </div>
+      
+      <aside class="floor-panel" aria-label="Floor status">
+        <div class="floor-header">
+          <span class="rivet"></span>
+          <span>FLOOR STATUS · LIVE</span>
+          <span class="rivet"></span>
+        </div>
+        <ul class="floor-list">
+          <li class="active"><span class="bay">BAY-01</span><strong>grok-high</strong><em>ARMED</em></li>
+          <li><span class="bay">BAY-02</span><strong>quality</strong><em>READY</em></li>
+          <li><span class="bay">BAY-03</span><strong>burn</strong><em>READY</em></li>
+          <li class="dim"><span class="bay">BAY-04</span><strong>fleet</strong><em>STANDBY</em></li>
+        </ul>
+        <div class="weld-bar" aria-hidden="true"><span></span></div>
+      </aside>
+    </div>
+  </section>
+  <section class="section problem reveal" id="problem">
+    <div class="wrap narrow">
+      <p class="section-tag">// FAULT ON THE FLOOR</p>
+      <h2>One model for everything is not a strategy.</h2>
+      <p>Defaulting every task to a single frontier lane wastes judgment where you need force, and force where you need judgment. No deliberate advisor / executor split means every child inherits the same blind spots.</p>
+      <ul class="fault-list">
+        <li>No named loadouts — just ad-hoc flags and hope</li>
+        <li>Advisor and executor fused into one opaque session</li>
+        <li>Fleets improvised without contracts or RESULT lines</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section solution reveal" id="solution">
+    <div class="wrap">
+      <p class="section-tag">// ORDNANCE ON RACK</p>
+      <h2>Arm the right loadout. Keep the advisor sharp.</h2>
+      <div class="sol-grid">
+        <article class="sol-card">
+          <h3>Named loadouts</h3>
+          <p>Each bay is a known lane — model, effort, rules, worktree discipline. Pull <code>grok-high</code> when the brief needs heavy lifting.</p>
+        </article>
+        <article class="sol-card">
+          <h3>Fable arms executors</h3>
+          <p>Claude Code stays the advisor. On explicit instruction it arms Grok 4.5 children via the armory launcher — deliberate hybrid, not auto-dispatch.</p>
+        </article>
+        <article class="sol-card">
+          <h3>Fleet of children</h3>
+          <p>Manifest in, parallel worktrees out. One commit per task, PROGRESS.md ledger, single RESULT line.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pillars reveal" id="pillars">
+    <div class="wrap">
+      <p class="section-tag">// PILLARS</p>
+      <h2>Five bolts that hold the rack</h2>
+      <div class="pillar-grid">
+        <article class="pillar"><span class="pillar-n">01</span><h3>Loadouts</h3><p>Named executor lanes — <code>quality</code>, <code>grok-high</code>, <code>burn</code>. Primary: Fable + grok-high.</p></article>
+        <article class="pillar"><span class="pillar-n">02</span><h3>Arm / worktree</h3><p><code>armory grok-high -p "…" -w name</code> pins model, effort, rules, and lands the child.</p></article>
+        <article class="pillar"><span class="pillar-n">03</span><h3>Fleet manifest</h3><p>Many children from one file. Max-parallel, stagger, seed. <code>fleet-report</code> is the gate.</p></article>
+        <article class="pillar"><span class="pillar-n">04</span><h3>fusion-advisor</h3><p>Optional skill: two-model fusion for high-leverage decisions — verify, don’t vote.</p></article>
+        <article class="pillar"><span class="pillar-n">05</span><h3>Doctor</h3><p>Check symlink, PATH, providers, and loadout readiness before you send a fleet.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section quickstart reveal" id="quickstart">
+    <div class="wrap">
+      <p class="section-tag">// QUICKSTART</p>
+      <h2>Symlink. List. Arm. Fleet.</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-n">1</span>
+          <div>
+            <h3>Symlink the armory</h3>
+            <button type="button" class="copy-block" data-cmd="mkdir -p ~/.local/bin && ln -sfn ~/Repositories/llm-armory/bin/llm ~/.local/bin/armory && export PATH=&quot;$HOME/.local/bin:$PATH&quot;" onclick="copyCmd(this)" tabindex="0">
+              <span class="copy-label">$</span>
+              <span class="copy-cmd">ln -sfn …/bin/llm ~/.local/bin/armory</span>
+            </button>
+          </div>
+        </li>
+        <li>
+          <span class="step-n">2</span>
+          <div>
+            <h3>Inspect the rack</h3>
+            <button type="button" class="copy-block" data-cmd="armory --list" onclick="copyCmd(this)" tabindex="0">
+              <span class="copy-label">$</span>
+              <span class="copy-cmd">armory --list</span>
+            </button>
+          </div>
+        </li>
+        <li>
+          <span class="step-n">3</span>
+          <div>
+            <h3>Arm an executor</h3>
+            <button type="button" class="copy-block" data-cmd="armory grok-high -p &quot;fix auth edge cases&quot; -w fix-auth" onclick="copyCmd(this)" tabindex="0">
+              <span class="copy-label">$</span>
+              <span class="copy-cmd">armory grok-high -p "…" -w name</span>
+            </button>
+          </div>
+        </li>
+        <li>
+          <span class="step-n">4</span>
+          <div>
+            <h3>Launch a fleet</h3>
+            <button type="button" class="copy-block" data-cmd="armory fleet grok-high --manifest fleet.txt --max-parallel 10" onclick="copyCmd(this)" tabindex="0">
+              <span class="copy-label">$</span>
+              <span class="copy-cmd">armory fleet grok-high --manifest fleet.txt</span>
+            </button>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section demo reveal" id="demo">
+    <div class="wrap">
+      <p class="section-tag">// DEMO · FROM THE REPO</p>
+      <h2>Rack list — live capture</h2>
+      <p class="demo-lede">Same arsenal rack you see in the README — <code>armory --list</code> on the warehouse floor.</p>
+      <div class="demo-split">
+        <div class="demo-gif-plate">
+          <span class="rivet tl"></span><span class="rivet tr"></span>
+          <span class="rivet bl"></span><span class="rivet br"></span>
+          <img src="/demo-rack.gif" width="720" alt="armory --list arsenal rack demo" class="demo-gif">
+        </div>
+        <div class="terminal" role="img" aria-label="Mock armory --list output">
+          <div class="term-chrome"><span></span><span></span><span></span><em>armory --list</em></div>
+          <pre class="term-body"><code><span class="t-dim">llm-armory · loadout rack · floor R7</span>
+<span class="t-blue">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  <span class="t-ok">●</span> <span class="t-bright">quality</span>     <span class="t-dim">Max/Fable · advisor</span>
+  <span class="t-ok">●</span> <span class="t-bright">grok-high</span>   <span class="t-accent">PRIMARY</span>  Grok 4.5 @ high
+  <span class="t-dim">○</span> <span class="t-dim">grok-xhigh</span>  <span class="t-dim">alias → grok-high</span>
+  <span class="t-ok">●</span> <span class="t-bright">burn</span>        limit-reset lane
+<span class="t-blue">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="t-dim">arm  ·  fleet  ·  doctor  ·  --dry-run</span></code></pre>
+        </div>
+      </div>
+      <div class="demo-mission">
+        <p class="section-tag">// MISSION CARD</p>
+        <img src="/demo-mission.gif" width="720" alt="armory --dry-run mission card demo" class="demo-gif mission">
+      </div>
+    
+      <div class="reveal companion-bay" style="margin-top:2rem">
+        <p class="section-tag">// COMPANION BAY · LIVE</p>
+        <p class="demo-lede">Video rides next to the rack capture — not instead of it.</p>
+        <div class="vid-plate companion-vid">
+          <span class="rivet tl"></span><span class="rivet tr"></span>
+          <span class="rivet bl"></span><span class="rivet br"></span>
+          <video preload="none" data-r7 data-auto muted loop playsinline poster="/posters/v04.jpg" aria-label="Bay motion v04">
+            <source src="/video/v04.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <p class="vid-caption" style="text-align:left">v04 · live bay · additional layer</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta reveal" id="cta">
+    <div class="wrap cta-inner">
+      <h2>Stock the floor. Arm with intent.</h2>
+      <p>Open source. Standalone-first. Steel floor first — motion bays as extra layer.</p>
+      <a class="btn btn-primary btn-lg" href="https://github.com/muslewski/llm-armory" target="_blank" rel="noopener">github.com/muslewski/llm-armory →</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>llm-armory</span>
+      <span class="dim">R7 · rack demo + companion bay</span>
+      <a href="https://github.com/muslewski/llm-armory" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+  <div id="crosshair-root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
