@@ -1,0 +1,16 @@
+{
+  "product": "llm-armory",
+  "siblingDir": "../../llm-armory",
+  "brandWord": "ARMORY",
+  "siteName": "llm-armory",
+  "siteUrl": "https://armory.muslewski.com",
+  "githubRepo": "muslewski/llm-armory",
+  "themeColor": "#0b1018",
+  "bg": "#0b1018",
+  "fg": "#d8e6f0",
+  "fontsCss": "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap",
+  "favicon": "/favicon.ico",
+  "ogImage": "/armory-banner.webp",
+  "footDoctrine": "Choose the right executor for the job.",
+  "ghEditPath": "docs/"
+}

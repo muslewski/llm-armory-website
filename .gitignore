@@ -3,3 +3,9 @@ dist
 .vercel
 .DS_Store
 *.log
+
+# generated product docs (from sibling llm-armory/docs via scripts/build-docs.mjs)
+generated/
+
+# Vercel/CI shallow clone of muslewski/llm-armory (docs SSG source)
+.cache/
