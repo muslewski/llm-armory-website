@@ -1,5 +1,7 @@
-/* SAGE-style install terminal — theme via --install-* vars on .install-term or :root */
-.install-term {
+/* Install terminal + hero copy chips.
+   Theme per site via --install-* on :root (mapped to --it-* here).
+   Hero .copy-block sits outside .install-term — so tokens must be on :root. */
+:root {
   --it-bg: var(--install-bg, #0e0c0a);
   --it-border: var(--install-border, #2a241c);
   --it-bar: var(--install-bar, #16140f);
@@ -10,6 +12,8 @@
   --it-prompt: var(--install-prompt, #c8972f);
   --it-hover: var(--install-hover, rgba(200, 151, 47, 0.1));
   --it-radius: var(--install-radius, 6px);
+}
+.install-term {
   max-width: 560px;
   margin-top: 1.25rem;
   background: var(--it-bg);
@@ -125,33 +129,57 @@
 }
 .install-foot .ok { color: var(--it-accent); }
 
-/* Hero / inline copy chips */
+/* Hero / inline copy chips — same tokens as install terminal */
 .copy-block {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 12px;
-  padding: 10px 14px;
+  font-size: 12.5px;
+  line-height: 1.3;
+  padding: 11px 14px;
   cursor: pointer;
-  border-radius: var(--it-radius, 4px);
-  border: 1px solid var(--it-border, currentColor);
-  background: var(--it-bg, transparent);
-  color: inherit;
-  transition: border-color 0.15s, color 0.15s;
+  border-radius: var(--it-radius);
+  border: 1px solid var(--it-border);
+  background: var(--it-bg);
+  color: var(--it-text);
+  transition: border-color 0.15s, color 0.15s, box-shadow 0.15s;
   text-align: left;
   max-width: 100%;
+  box-shadow: none;
 }
 .copy-block:hover,
 .copy-block:focus-visible {
-  border-color: var(--it-accent, currentColor);
+  border-color: var(--it-accent);
   outline: none;
+  color: var(--it-text);
 }
-.copy-block.copied { border-color: var(--it-accent); color: var(--it-accent); }
-.copy-block .copy-icon { opacity: 0.55; flex-shrink: 0; }
-.copy-block.copied .copy-icon { opacity: 1; color: var(--it-accent); }
-.copy-block .c-prompt { color: var(--it-prompt); }
-.copy-block .c-cmd { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.copy-block.copied {
+  border-color: var(--it-accent);
+  color: var(--it-accent);
+}
+.copy-block .copy-icon {
+  opacity: 0.65;
+  flex-shrink: 0;
+  color: var(--it-muted);
+  font-size: 13px;
+}
+.copy-block.copied .copy-icon {
+  opacity: 1;
+  color: var(--it-accent);
+}
+.copy-block .c-prompt {
+  color: var(--it-prompt);
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.copy-block .c-cmd {
+  color: var(--it-cmd);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
 
 #copy-toast {
   position: fixed;
