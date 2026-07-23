@@ -12,7 +12,7 @@
   --docs-accent: #4a9fd4;
   --docs-accent-2: #7ec8f0;
   --docs-accent-dim: #2a6a90;
-  --docs-accent-glow: rgba(74, 159, 212, 0.35);
+  --docs-accent-glow: transparent;
   --docs-accent-soft: rgba(74, 159, 212, 0.1);
   --docs-display: "Chakra Petch", system-ui, sans-serif;
   --docs-body-font: system-ui, "Segoe UI", sans-serif;
@@ -21,9 +21,9 @@
   --docs-radius: 2px;
   --docs-brand-size: 1.1rem;
   --docs-brand-track: 0.14em;
-  --docs-brand-shadow: 0 0 14px rgba(74, 159, 212, 0.35);
+  --docs-brand-shadow: none;
   --docs-h1: #e8f2fa;
-  --docs-h1-shadow: 0 0 28px rgba(74, 159, 212, 0.25);
+  --docs-h1-shadow: none;
   --docs-h1-track: 0.02em;
   --docs-prose-size: 15.5px;
   --docs-card-bg: #151d28;
@@ -32,14 +32,14 @@
   --docs-term-bg: #0a1218;
   --docs-term-fg: #d8e6f0;
   --docs-term-border: 1px solid #2a3a48;
-  --docs-term-shadow: 0 0 18px rgba(74, 159, 212, 0.12);
+  --docs-term-shadow: none;
   --docs-code-bg: rgba(74, 159, 212, 0.12);
   --docs-code-fg: #7ec8f0;
   --docs-code-border: 1px solid rgba(74, 159, 212, 0.25);
   --docs-gh-fg: #e8f2fa;
   --docs-gh-bg: #122838;
   --docs-gh-border: 1px solid #4a9fd4;
-  --docs-gh-shadow: 0 0 14px rgba(74, 159, 212, 0.25);
+  --docs-gh-shadow: none;
 }
 .docs-nav-link { text-transform: uppercase; letter-spacing: 0.08em; font-size: 13px !important; }
 /* ════ SAGE docs — brand-matched product documentation ════ */
@@ -70,8 +70,6 @@ body.docs-body {
   top: 0;
   z-index: 100;
   background: color-mix(in srgb, var(--docs-bg) 94%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--docs-border);
 }
 .docs-top-inner {
@@ -100,7 +98,7 @@ body.docs-body {
   font-size: 24px;
   color: var(--docs-accent);
   letter-spacing: 0.12em;
-  text-shadow: 0 0 10px var(--docs-accent-glow);
+  text-shadow: none;
 }
 .docs-brand-tag {
   font-family: var(--docs-mono), ui-monospace, monospace;
@@ -264,7 +262,7 @@ body.docs-body {
   letter-spacing: 0.04em;
   line-height: 1.15;
   margin: 0 0 16px;
-  text-shadow: 0 0 28px var(--docs-accent-glow);
+  text-shadow: none;
 }
 .docs-prose h2 {
   font-family: var(--docs-body-font), system-ui, sans-serif;
@@ -305,7 +303,7 @@ body.docs-body {
 }
 .docs-prose a:hover {
   border-bottom-color: var(--docs-accent);
-  text-shadow: 0 0 12px var(--docs-accent-soft);
+  text-shadow: none;
 }
 .docs-prose ul,
 .docs-prose ol {
@@ -389,7 +387,7 @@ body.docs-body {
   padding: 16px 18px;
   margin: 1.1rem 0 1.4rem;
   overflow-x: auto;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(200, 151, 47, 0.05);
+  box-shadow: none;
 }
 .docs-prose pre code,
 .docs-prose .docs-pre code {
@@ -554,7 +552,6 @@ body.docs-body {
 .docs-top {
   background: color-mix(in srgb, var(--docs-top-bg, var(--docs-panel)) 96%, transparent) !important;
   border-bottom: var(--docs-chrome-border, 1px solid var(--docs-border)) !important;
-  backdrop-filter: blur(12px);
 }
 .docs-brand-word {
   font-family: var(--docs-display), system-ui, sans-serif !important;
@@ -562,7 +559,7 @@ body.docs-body {
   font-size: var(--docs-brand-size, 1.35rem) !important;
   letter-spacing: var(--docs-brand-track, 0.08em) !important;
   font-weight: var(--docs-brand-weight, 700) !important;
-  text-shadow: var(--docs-brand-shadow, none) !important;
+  text-shadow: none !important;
 }
 .docs-brand-tag {
   font-family: var(--docs-mono), ui-monospace, monospace !important;
@@ -643,7 +640,7 @@ body.docs-body {
 .docs-prose h1 {
   font-family: var(--docs-display), system-ui, sans-serif !important;
   color: var(--docs-h1, var(--docs-fg)) !important;
-  text-shadow: var(--docs-h1-shadow, none) !important;
+  text-shadow: none !important;
   letter-spacing: var(--docs-h1-track, 0.02em) !important;
   font-weight: var(--docs-h1-weight, 700) !important;
 }
@@ -742,3 +739,75 @@ body.docs-body {
 .docs-doctrine { color: var(--docs-muted-2) !important; }
 .docs-doctrine .gold-glow,
 .docs-doctrine em { color: var(--docs-accent) !important; }
+
+
+/* ── Armory craft: plate + weld edge, not laser glow ── */
+body.docs-body { background: #0b1018 !important; }
+.docs-top {
+  background: linear-gradient(180deg, #121a24, #0b1018) !important;
+  border-bottom: 1px solid #2a384c !important;
+  box-shadow: none !important;
+}
+.docs-brand-word {
+  text-transform: uppercase;
+  letter-spacing: 0.14em !important;
+  color: #4a9fd4 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+.docs-brand-tag {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 9px;
+  color: #6a8090 !important;
+  border: 1px solid #2a384c;
+  padding: 2px 6px;
+}
+.docs-aside {
+  background: #121a24 !important;
+  border-right: 1px solid #2a384c !important;
+}
+.docs-aside-label {
+  text-transform: uppercase !important;
+  letter-spacing: 0.16em !important;
+  font-size: 10px !important;
+  font-family: "Barlow Condensed", system-ui, sans-serif !important;
+  color: #4a9fd4 !important;
+}
+/* Plate chapter with edge, no bloom */
+.docs-nav-section {
+  background: #151d28 !important;
+  border: 1px solid #2a384c !important;
+  border-radius: 2px !important;
+  box-shadow: inset 0 1px 0 rgba(74,159,212,0.08) !important;
+  position: relative;
+}
+.docs-nav-link {
+  text-transform: uppercase;
+  letter-spacing: 0.08em !important;
+  font-size: 12px !important;
+  border-radius: 2px !important;
+  border-left: none !important;
+}
+.docs-nav-link:hover {
+  background: rgba(74,159,212,0.08) !important;
+  color: #7ec8f0 !important;
+}
+.docs-nav-link.is-active {
+  background: rgba(74,159,212,0.12) !important;
+  color: #7ec8f0 !important;
+  border-left: none !important;
+  box-shadow: inset 2px 0 0 #4a9fd4;
+  font-weight: 600 !important;
+}
+.docs-prose h1 { text-shadow: none !important; }
+.docs-prose pre, .docs-pre {
+  box-shadow: none !important;
+  border: 1px solid #2a3a48 !important;
+  background: #0a1218 !important;
+}
+.docs-gh {
+  box-shadow: none !important;
+  border: 1px solid #4a9fd4 !important;
+  background: #122838 !important;
+}

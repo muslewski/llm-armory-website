@@ -12,5 +12,7 @@
   "favicon": "/favicon.ico",
   "ogImage": "/armory-banner.webp",
   "footDoctrine": "Choose the right executor for the job.",
-  "ghEditPath": "docs/"
+  "ghEditPath": "docs/",
+  "brandTag": "floor",
+  "asideLabel": "Loadouts"
 }
